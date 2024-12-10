@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(https://static.vecteezy.com/ti/fotos-gratis/p1/47024418-vermelho-raposa-em-pe-alerta-dentro-deserto-panorama-gratis-foto.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*carrossel*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    /*altura minima*/
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+    height: 100px;
+    padding: 0 20px 0 20px;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+}
+
+.esquerda {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
+}
+
+.esquerda h1 {
+    align-content: center;
+    color: antiquewhite;
+}
+
+.direita h1 {
+    color: antiquewhite;
+
+}
+
+.direita {
+    display: flex;
+    flex-direction: row;
+}
+
+.container_main {
+
+    width: 100%;
+    height: 100vh;
+
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.buscar ul {
+
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.buscar li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    transition: .6s;
+}
+
+a:hover {
+    border-bottom: 1px solid;
+    transition: .6s;
+    scale: 1.05;
+}
+
+
+
+
+.esquerda_container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+
+    padding: 15px;
+
+    text-align: start;
+    color: #e3e3e3;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.esquerda_container p {
+    margin-top: 15px;
+    text-align: justify;
+}
+
+.direita_container {
+    width: 70%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap: 10px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.cards_fotos {
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.gallery img:hover{
+    scale: 1.1;
+    transition: .3s;
+}
+.carrossel {
+
+    overflow: hidden;
+    /*permitir que conteúdos grandes possam caber em uma página, usando barras de rolagem*/
+    height: 500px;
+    width: 500px;
+    position: relative;
+
+}
+
+.carregando {
+    animation: carregar 2s ease-in-out infinite;
+
+}
+
+@keyframes carregar {
+    0% {
+        left: 0%;
+        border-bottom: 10px solid orange;
+        width: 10%;
+    }
+
+    50% {
+        left: 0%;
+        border-bottom: 10px solid orange;
+        width: 15%;
+    }
+
+    100% {
+        left: 0%;
+        border-bottom: 10px solid orange;
+        width: 30%;
+    }
+}
+
+.container_carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    flex-direction: row;
+}
+
+#img {
+    object-fit: cover;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 0;
+}
+
+
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;
+}
+
+.card-list .card-item {
+    height: auto;
+    color: #fff;
+    user-select: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.card-list .card-item .user-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.card-list .card-item .user-profession {
+    font-size: 1.15rem;
+    color: #e3e3e3;
+    font-weight: 500;
+    margin: 14px 0 40px;
+}
+
+.card-list .card-item .message-button {
+    font-size: 1rem;
+
+    color: #030728;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.card-list .card-item .message-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+    background: #fff;
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+    color: #fff;
+    margin-top: -55px;
+    transition: 0.2s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+    color: #4658ff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 95vw;
+    height: 100%;
+
+}
+
+.gallery img {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+
+
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 16px;
+    background-color: #f76c6c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d95f5f;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.modal {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    
+    background-color: aliceblue;
+    z-index: 3;
+    visibility: hidden;
+    
+    opacity: .5;
+
+
+}
+
+.modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+
+}
+
+.modal.ativo {
+    visibility: visible;
+    position: relative;
+    opacity: 1;
+
+
+    box-shadow: 0 0 20px orange;
+    position: fixed;
+    top: 15%;
+}
+
+#x {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+@media (max-width:400px) {
+
+    .slider-wrapper {
+        margin: 0 10px 40px;
+    }
+
+    .container_main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        margin-top: 70%;
+    }
+
+    body{
+        gap: 15px;
+    }
+    .esquerda_container {
+        width: 100%;
+        margin-top: 13rem;
+    }
+
+    .slider-wrapper .swiper-slide-button {
+        display: none;
+    }
+
+    .gallery img{
+        
+    height: 400px;
+    object-fit: fill;
+    }
+
+    .carrossel {
+        overflow: hidden;
+
+        width: 90%;
+        position: relative;
+        margin-top: 18rem;
+
+    }
+
+    #img img {
+        object-fit: fill;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .cards_fotos {
+        padding-top: 0;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header{
+        flex-direction: column;
+        height: 25%;
+    }
+
+    .modal{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media (min-width:401px) and (max-width:800px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .carrossel {
+        overflow: hidden;
+
+        width: 90%;
+        position: relative;
+        margin-top: 18rem;
+
+    }
+
+    #img img {
+        object-fit: fill;
+    }
+
+    .container_main {
+
+        margin-top: 15%;
+
+    }
+
+    .direita_container{
+        width: 50%;
+    }
+    .esquerda_container{
+        width: 50%;
+    }
+    
+    .container_main {
+        margin-top: 15%;
+    }
+    .card-list .card-item .message-button{
+        width: 100%;
+        font-size: 10px;
+        text-align: center;
+        padding: 0px;
+        height: 10%;
+        font-weight: 600;
+        margin: 5px;
+    }
+
+    .slider-wrapper{
+        width: 90%;
+        margin: 0;
+    }
+
+    .cards_fotos{
+        padding-top: 0;
+    }
+
+    .container.swiper{
+        justify-items: center;
+    }
+    
+    .carrossel{
+        margin-top: 0;
+        width: 80%;
+        height: 500px;
+    }
+    header{
+        flex-direction: column;
+        height: 25%;
+    }
+
+
+}
